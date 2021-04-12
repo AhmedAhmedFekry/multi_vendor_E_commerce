@@ -28,7 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'vendor_admin'
+LOGOUT_REDIRECT_URL = 'frontpage'
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'vendor.apps.VendorConfig',
 ]
 
 MIDDLEWARE = [
