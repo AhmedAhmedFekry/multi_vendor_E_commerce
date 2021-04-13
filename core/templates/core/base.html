@@ -50,11 +50,16 @@
             {% for category in menu_categories %}
             <a href="{% url 'category' category.slug %}" class="navbar-item">{{ category.title }}</a>
         {% endfor %}
-          </div>
+     
+          </div> 
       
           <div class="navbar-end">
             <div class="navbar-item">
+              <a href="{% url 'cart' %}" class="button is-dark">Cart{% if cart %} ({{ cart|length }}){% endif %}</a>
+          </div>
+            <div class="navbar-item">
               <div class="buttons">
+                
                 <a class="button is-primary">
                   <strong>Sign up</strong>
                 </a>
@@ -88,5 +93,7 @@
         <a href="{% url 'become_vendor' %}">Become vendor</a>
         {% endif %}
     </footer>
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>

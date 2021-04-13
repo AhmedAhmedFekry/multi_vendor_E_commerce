@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STRIPE_PUB_KEY = 'pk_test_51IfiYZJleUC3UqnBlGdjyycXEBGU9QBrytdfp1XTtKaJwtmNBssuNLhd7vLngKkTzvG5hkIv4ARYQ9I6m46ZAMZk00gkROn1pP'
+STRIPE_SECRET_KEY = 'sk_test_51IfiYZJleUC3UqnBhPaiN7xmAIINN46TIs1nmPxvoLL2W6IRFX9FVjyQwPtQjYLPK28Xp6V1NDyYaw70X0hFi0Zf00XTVIzVrb'
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'vendor_admin'
 LOGOUT_REDIRECT_URL = 'frontpage'
@@ -47,7 +50,9 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'vendor.apps.VendorConfig',
     'product.apps.ProductConfig',
-    'cart.apps.CartConfig'
+    'cart.apps.CartConfig',
+    'order.apps.OrderConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -74,6 +79,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'product.context_processors.menu_categories',
+                'cart.context_processors.cart'
             ],
         },
     },
