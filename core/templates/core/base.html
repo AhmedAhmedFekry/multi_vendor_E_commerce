@@ -27,10 +27,21 @@
         </div>
       
         <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
+         
+            <div class="navbar-start">
+              <div class="navbar-item">
+                  <form method="get" action="{% url 'search' %}">
+                      <div class="field has-addons">
+                          <div class="control">
+                              <input type="text" class="input" placeholder="Search..." name="query">
+                          </div>
+                          <div class="control">
+                              <button class="button is-dark is-uppercase">Search</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          
       
             <a href="{% url 'contact' %}" class="navbar-item">
               contact
