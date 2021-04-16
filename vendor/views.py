@@ -87,12 +87,14 @@ def edit_vendor(request):
 
     return render(request, 'vendor/edit_vendor.html', {'vendor': vendor})
 
-# def vendors(request):
-#     vendors = Vendor.objects.all()
 
-#     return render(request, 'vendor/vendors.html', {'vendors': vendors})
+def vendors(request):
+    vendors = Vendor.objects.all()
 
-# def vendor(request, vendor_id):
-#     vendor = get_object_or_404(Vendor, pk=vendor_id)
+    return render(request, 'vendor/vendors.html', {'vendors': vendors})
 
-#     return render(request, 'vendor/vendor.html', {'vendor': vendor})
+
+def vendor(request, vendor_id):
+    vendor = get_object_or_404(Vendor, pk=vendor_id)
+
+    return render(request, 'vendor/vendor.html', {'vendor': vendor})

@@ -6,8 +6,7 @@ from django.shortcuts import render, redirect
 from .cart import Cart
 from .forms import CheckoutForm
 
-from order.utilities import checkout
-# , notify_customer, notify_vendor
+from order.utilities import checkout, notify_customer, notify_vendor
 
 
 def cart_detail(request):
